@@ -51,8 +51,8 @@ namespace cobalt
 
         void push_constants( Pipeline const&, VkShaderStageFlags, uint32_t offset, uint32_t size, void const* data ) const;
 
-        void draw( int32_t vertex_count, uint32_t instance_count,
-                   uint32_t vertex_offset = 0u, uint32_t instance_offset = 0u ) const;
+        void draw(
+            int32_t vertex_count, uint32_t instance_count, uint32_t vertex_offset = 0u, uint32_t instance_offset = 0u ) const;
         void draw_indexed( uint32_t index_count, uint32_t instance_count, uint32_t index_offset = 0u,
                            int32_t vertex_offset = 0u, uint32_t instance_offset = 0u ) const;
 

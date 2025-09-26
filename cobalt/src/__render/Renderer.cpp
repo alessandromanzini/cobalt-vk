@@ -50,13 +50,13 @@ namespace cobalt
         in_flight_fence.reset( );
 
         // 3. Record a command buffer which draws the scene onto that image.
-        if ( record_command_buffer_fn_ )
-        {
-            record_command_buffer_fn_( cmd_buffer, swapchain_ref_, image_index, static_cast<uint32_t>( current_frame_ ) );
-        }
         if ( update_uniform_buffer_fn_ )
         {
             update_uniform_buffer_fn_( static_cast<uint32_t>( current_frame_ ) );
+        }
+        if ( record_command_buffer_fn_ )
+        {
+            record_command_buffer_fn_( cmd_buffer, swapchain_ref_, image_index, static_cast<uint32_t>( current_frame_ ) );
         }
 
         // 4. We need to submit the recorded command buffer to the graphics queue before submitting the image to the swapchain.
